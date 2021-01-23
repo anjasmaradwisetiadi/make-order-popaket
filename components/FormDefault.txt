@@ -1,0 +1,50 @@
+<template>
+  <input
+    v-model="data"
+    :type="type"
+    class="w-full popaket-input"
+    :class="myClass"
+    :style="myStyle"
+    :placeholder="placeholder"
+    autocomplete="off"
+    @input="emitData"
+  />
+</template>
+<script lang="ts">
+import Vue from 'vue';
+import Component from 'nuxt-class-component';
+@Component({
+  props: {
+    type: {
+      type: String,
+      default: 'text',
+    },
+    placeholder: {
+      type: String,
+      default: '',
+    },
+    myClass: {
+      type: String,
+      default: 'teal-800',
+    },
+    myStyle: {
+      type: String,
+      default: '',
+    },
+    value: {
+      type: String,
+      default: '',
+    },
+  },
+})
+export default class InputDefault extends Vue {
+  public data: String = '';
+  mounted(): void {
+    this.data = this.$props.value;
+  }
+
+  emitData() {
+    this.$emit('input', this.data);
+  }
+}
+</script>

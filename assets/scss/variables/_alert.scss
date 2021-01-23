@@ -1,0 +1,14 @@
+%alert-danger {
+  @apply bg-pink-100 text-pink-700 border-pink-700;
+}
+%alert-success {
+  @apply bg-green-100 text-green-700 border-green-700;
+}
+%alert-info {
+  @apply bg-blue-100 text-blue-700 border-blue-700;
+}
+%alert-warn {
+  @apply bg-orange-100 text-orange-700 border-orange-700;
+}
+
+$alert-types: ('danger', 'warn', 'info', 'success');

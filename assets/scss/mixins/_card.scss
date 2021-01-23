@@ -1,0 +1,21 @@
+@mixin card-base() {
+  @apply bg-white shadow-sm rounded-md;
+
+  & .title,
+  & .content,
+  & .footer {
+    @apply px-3;
+  }
+
+  & .title {
+    @apply py-2 border-b font-semibold text-base;
+  }
+
+  & .content {
+    @apply text-sm py-4;
+  }
+
+  & .footer {
+    @apply py-1 border-t text-sm;
+  }
+}

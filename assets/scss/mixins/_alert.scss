@@ -1,0 +1,7 @@
+@mixin alert-base() {
+  @apply flex items-center text-sm font-bold px-4 py-3 px-4 py-3 rounded border;
+}
+
+@mixin alert-type($type) {
+  @extend %alert-#{$type};
+}

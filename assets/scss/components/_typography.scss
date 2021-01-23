@@ -1,0 +1,12 @@
+@for $size from 1 through 3 {
+  .#{$prefix}-display-#{$size} {
+    @apply font-semibold text-#{7 - $size}xl;
+  }
+}
+@each $size in $typography-heading-sizes {
+  $i: index($typography-heading-sizes, $size);
+
+  .#{$prefix}-heading-#{$i} {
+    @apply font-semibold text-#{$size};
+  }
+}

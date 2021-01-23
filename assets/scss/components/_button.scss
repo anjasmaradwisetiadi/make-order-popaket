@@ -1,0 +1,9 @@
+.#{$prefix}-btn {
+  @include btn-base();
+
+  @each $color in $btn-colors {
+    &.color-#{$color} {
+      @include btn-color($color);
+    }
+  }
+}

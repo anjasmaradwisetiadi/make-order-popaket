@@ -1,0 +1,9 @@
+.#{$prefix}-alert {
+  @include alert-base();
+
+  @each $type in $alert-types {
+    &.alert-#{$type} {
+      @extend %alert-#{$type};
+    }
+  }
+}

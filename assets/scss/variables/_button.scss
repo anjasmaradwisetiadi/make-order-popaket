@@ -1,0 +1,27 @@
+%btn-xs {
+  @apply py-1 px-1 text-xs;
+}
+
+%btn-sm {
+  @apply py-1 px-2 text-base;
+}
+
+%btn-lg {
+  @apply py-2 px-2 text-lg;
+}
+
+%btn-xl {
+  @apply py-2 px-3 text-xl;
+}
+
+$btn-colors: (
+  'primary',
+  'secondary',
+  'teal',
+  'purple',
+  'blue',
+  'pink',
+  'green',
+  'gray',
+  'orange'
+);

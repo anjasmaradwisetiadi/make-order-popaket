@@ -1,0 +1,52 @@
+@mixin btn-base() {
+  @apply py-1 px-2 rounded text-white;
+
+  @each $size in $sizes {
+    &.size-#{$size} {
+      @extend %btn-#{$size};
+    }
+  }
+}
+
+@function color-mapper($color, $transition) {
+  $result: #{$color}-#{$transition};
+
+  @if $color == 'primary' {
+    $result: teal-#{$transition};
+  }
+
+  @if $color == 'secondary' {
+    $result: purple-#{$transition};
+  }
+
+  @return $result;
+}
+
+@mixin btn-color($color) {
+  &:not(.color-light):not(.color-outlined) {
+    @apply bg-#{color-mapper($color, 900)};
+  }
+  &:not(.color-light):not(.color-outlined):disabled {
+    @apply bg-#{color-mapper($color, 500)};
+  }
+
+  &:hover:not(.color-outlined):not(.color-light):not(:disabled) {
+    @apply bg-#{color-mapper($color, 900)};
+  }
+
+  &.color-outlined {
+    @apply text-#{color-mapper($color, 900)} border-#{color-mapper($color, 900)} border border-solid;
+
+    &:hover:not(.color-light) {
+      @apply border-#{color-mapper($color, 600)} text-#{color-mapper($color, 600)};
+    }
+  }
+
+  &.color-light {
+    @apply bg-#{color-mapper($color, 100)} text-#{color-mapper($color, 900)};
+
+    &:hover:not(.color-outlined):not(:disabled) {
+      @apply bg-#{color-mapper($color, 500)};
+    }
+  }
+}
